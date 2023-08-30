@@ -1,12 +1,18 @@
+import { useContext } from "react";
 import { MainSpace, ImageSpace, FormSpace } from "./styles";
+import { Button } from "@mui/material";
 import Form from "./Form";
+import { CounterContext } from "./Form/Context";
 
 function App() {
+  const counterData= useContext(CounterContext)
   return (
     <MainSpace>
       <ImageSpace />
       <FormSpace>
         <Form />
+        <Button onClick={() => counterData.resta()}> - </Button>
+        <Button onClick={() => counterData.suma()}> + </Button>
       </FormSpace>
     </MainSpace>
   );
